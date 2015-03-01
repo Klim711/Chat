@@ -8,20 +8,30 @@
       <div style=" width:800px; margin: auto;">
 
           <div class="header">
-              <h1>Space Chat</h1>
+              <h1 >Space Chat</h1>
               <div class="profileBox">
                   <img class="profileImg" width="50" height="50" src="https://secure.gravatar.com/avatar/c6c1eb240657c8350f338dd23442054d?s=240&d=mm">
                   <h3>Me</h3>
                   <br />
-                  <a>Edit</a>                  
+                  <a  class="edit">Edit</a>                  
               </div>
           </div>
 
           <div class="chat-box">
               <div class="messages">
+                  <div class="oneMessage"> 
+                      <div class="info-message">
+                          <h4>Me</h4>
+                          <button class="edit-message">.</button>
+                          <h4 class="time">12:32</h4>                          
+                      </div>
+                      <div class="text-message" >
+                          <p class="p-text">Hello, world!</p>
+                      </div>
+                  </div>              
               </div>
               <div class="myMessage">
-                  <textarea class="msg"> </textarea>
+                  <textarea class="textArea">Type your text here... </textarea>
               </div>
               <button class="sendButton"> <img class="sendImg" src="http://www.clker.com/cliparts/h/2/J/m/4/o/send-button-md.png" > </button>
           </div>
@@ -30,14 +40,17 @@
               <div class="friend">
                   <img class="friendImg"   src="https://secure.gravatar.com/avatar/c6c1eb240657c8350f338dd23442054d?s=240&d=mm">
                   <h2>Friend1</h2>
+                  <h5>Online</h5>
               </div>
               <div class="friend">
                   <img class="friendImg" src="https://secure.gravatar.com/avatar/c6c1eb240657c8350f338dd23442054d?s=240&d=mm">
                   <h2>Friend2</h2>
+                  <h5 >Online</h5>
               </div>
               <div class="friend">
                   <img class="friendImg" src="https://secure.gravatar.com/avatar/c6c1eb240657c8350f338dd23442054d?s=240&d=mm">
                   <h2>Friend3</h2>
+                  <h5>Offline</h5>
               </div>
           </div>
 

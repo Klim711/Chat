@@ -60,6 +60,94 @@ a {
     border:groove;
 }
 
+
+.messages {
+    background-color: white;
+    width: 530px;
+    height: 300px;
+    margin-left: 20px;
+    margin-top: 20px;   
+    border:inset;
+    border-radius: 10px;
+}
+
+.oneMessage {
+    margin-top: 5px;
+    width:inherit;
+    height: 40px;
+}
+
+.info-message {
+    width: 50px;
+    height:inherit;
+    margin-left:10px;
+    display:inline-block;
+}
+
+.edit-message {
+    margin-top: 10px;
+    display:inline-block;
+    float:right;
+}
+
+h4 {
+    display:inline-block;
+    margin:auto;
+}
+
+.time {
+    font-size:xx-small;
+}
+
+.text-message {
+    border:inset;    
+    border-radius: 10px;
+    float:right;
+    margin-right: 10px;
+    width: 450px;
+    height:inherit;
+    display:inline-block;    
+    background-color:#EBEBEB;
+}
+
+.p-text {
+    padding-top: 5px;
+    padding-left: 10px;
+    margin:auto;
+    display:inline-block;
+}
+
+.myMessage {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 450px;
+    height: 50px;
+    display:inline-block;
+}
+
+.textArea {
+    width: inherit;
+    height: inherit;
+    resize: none;
+    border:inset;
+    border-radius: 10px;    
+    background-color:#EBEBEB;
+}
+
+button.sendButton { 
+    display:inline-block;
+    height:auto;
+    margin:auto;
+    float:right;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+img.sendImg {
+    height: 35px;
+    width: 55px;
+}
+
 .friend-box {
     background-image: url(http://subtlepatterns.com/patterns/old_moon.png);
     width: 210px;
@@ -79,6 +167,7 @@ a {
     border-radius: 10px;
 }
 .friendImg {
+    float:left;
     display:inline-block;
     width: 50px;
     height: 50px;
@@ -86,47 +175,15 @@ a {
     margin-top: 5px;
 }
 h2 {
-    float: right;
+    
+    display:inline-block;
     margin: auto;
-    margin-top: 15px;
-    margin-right: 40px;
+    padding-left: 25px;
+    padding-top: 12px;
 }
-.messages {
-    background-color: #FEFAC0;
-    width: 530px;
-    height: 300px;
-    margin-left: 20px;
-    margin-top: 20px;   
-    border:inset;
-    border-radius: 10px;
-}
-
-.myMessage {
-    margin-top: 10px;
-    margin-left: 20px;
-    width: 450px;
-    height: 50px;
-    display:inline-block;
-}
-
-.msg {
-    background-color:#FEFAC0;
-    width: inherit;
-    height: inherit;
-    resize: none;
-    border-radius: 10px;
-}
-
-button.sendButton { 
-    display:inline-block;
-    height:auto;
-    margin:auto;
-    float:right;
-    margin-right: 15px;
-    margin-top: 15px;
-    border-radius: 10px;
-}
-img.sendImg {
-    height: 35px;
-    width: 55px;
+h5 {
+    padding-left:25px;
+    display: inline-block;
+    font-size:x-small;
+    margin: auto;
 }
