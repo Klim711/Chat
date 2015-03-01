@@ -1,0 +1,132 @@
+body{
+    background-image: url(http://subtlepatterns.com/patterns/stardust.png);
+    padding: 20px;
+}
+
+h1{
+    margin: auto;
+    line-height: inherit;
+    text-align: center;
+    font-family:'Comic Sans MS';
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display:inline-block;
+}
+
+.header {
+    margin:auto;
+    background-image: url(http://subtlepatterns.com/patterns/old_moon.png);
+    width: 795px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(2, 2, 2, 0.5),inset 0px 30px 30px rgba(18, 18, 18, 0.4);      
+    margin-top: -20px;
+    text-align: center;
+    border:groove;
+}
+
+.profileBox {
+    width: 210px;
+    height: 55px;
+    float: right;
+    border:groove;
+    border-radius: 10px;
+}
+.profileImg {
+    float: left;
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
+h3 {
+    display: inline-block;
+    margin:auto;
+    margin-top: 10px;
+    margin-right: 40px;
+}
+a {
+    display:inline-block;    
+    margin-right: 40px;
+}
+
+.chat-box {
+    background-image: url(http://subtlepatterns.com/patterns/old_moon.png);
+    width: 570px;
+    height: 410px;
+    margin-top: 10px;
+    border-radius: 10px;
+    display:inline-block;
+    box-shadow: 0 10px 15px rgba(2, 2, 2, 0.5),inset 0px 30px 30px rgba(18, 18, 18, 0.4);      
+
+    border:groove;
+}
+
+.friend-box {
+    background-image: url(http://subtlepatterns.com/patterns/old_moon.png);
+    width: 210px;
+    height: 410px;
+    margin-top: 10px;
+    float:right;
+    border-radius: 10px;
+    display:inline-block;
+    box-shadow: 0 10px 15px rgba(2, 2, 2, 0.5),inset 0px 30px 30px rgba(18, 18, 18, 0.4);      
+
+    border:groove;
+}
+
+.friend {
+    border: inset;
+    height: 60px;
+    border-radius: 10px;
+}
+.friendImg {
+    display:inline-block;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+h2 {
+    float: right;
+    margin: auto;
+    margin-top: 15px;
+    margin-right: 40px;
+}
+.messages {
+    background-color: #FEFAC0;
+    width: 530px;
+    height: 300px;
+    margin-left: 20px;
+    margin-top: 20px;   
+    border:inset;
+    border-radius: 10px;
+}
+
+.myMessage {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 450px;
+    height: 50px;
+    display:inline-block;
+}
+
+.msg {
+    background-color:#FEFAC0;
+    width: inherit;
+    height: inherit;
+    resize: none;
+    border-radius: 10px;
+}
+
+button.sendButton { 
+    display:inline-block;
+    height:auto;
+    margin:auto;
+    float:right;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+img.sendImg {
+    height: 35px;
+    width: 55px;
+}
