@@ -3,63 +3,59 @@ body{
     padding: 20px;
 }
 
-h1{
-    margin: auto;
-    line-height: inherit;
-    text-align: center;
+.name-chat {
     font-family:'Comic Sans MS';
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     display:inline-block;
 }
 
 .header {
-    margin:auto;
+    margin-top: 20px;
     background-image: url(http://subtlepatterns.com/patterns/old_moon.png);
     width: 795px;
-    height: 60px;
+    height: 70px;
     border-radius: 10px;
     box-shadow: 0 10px 15px rgba(2, 2, 2, 0.5),inset 0px 30px 30px rgba(18, 18, 18, 0.4);      
-    margin-top: -20px;
     text-align: center;
     border:groove;
 }
 
-.profileBox {
+.profile-box {
+    vertical-align: middle;
+    font-size: large;
     width: 210px;
-    height: 55px;
+    height: 65px;
     float: right;
     border:groove;
     border-radius: 10px;
-}
-.profileImg {
-    float: left;
-    margin-left: 15px;
-    margin-top: 3px;
+    text-align: center;
 }
 
-h3 {
+.edit-name {
+    font-size: small;
+    max-width: 80px;
+    height:28px;
+    resize: none;
+    border:inset;
+    border-radius: 10px;    
+    background-color:#EBEBEB;
     display: inline-block;
-    margin:auto;
-    margin-top: 10px;
-    margin-right: 40px;
 }
-a {
-    display:inline-block;    
-    margin-right: 40px;
+
+.btn-change {
+    margin-bottom: 20px;
 }
 
 .chat-box {
     background-image: url(http://subtlepatterns.com/patterns/old_moon.png);
-    width: 570px;
+    width: 800px;
     height: 410px;
     margin-top: 10px;
     border-radius: 10px;
     display:inline-block;
-    box-shadow: 0 10px 15px rgba(2, 2, 2, 0.5),inset 0px 30px 30px rgba(18, 18, 18, 0.4);      
-
+    box-shadow: 0 10px 15px rgba(2, 2, 2, 0.5),inset 0px 30px 30px rgba(18, 18, 18, 0.4);
     border:groove;
 }
-
 
 .messages {
     background-color: white;
@@ -69,64 +65,37 @@ a {
     margin-top: 20px;   
     border:inset;
     border-radius: 10px;
+    overflow-y:scroll;
+    overflow-x: hidden;
 }
 
 .oneMessage {
     margin-top: 5px;
-    width:inherit;
-    height: 40px;
+    width:inherit - 10px;
 }
-
-.info-message {
-    width: 50px;
-    height:inherit;
-    margin-left:10px;
-    display:inline-block;
+.user-name {
+    color: cadetblue;
+    font-size: 15px;
+    margin-left: 10px;
+    height: inherit;
+    display: inline-block;
 }
-
-.edit-message {
-    margin-top: 10px;
-    display:inline-block;
-    float:right;
-}
-
-h4 {
-    display:inline-block;
-    margin:auto;
-}
-
-.time {
-    font-size:xx-small;
-}
-
 .text-message {
-    border:inset;    
-    border-radius: 10px;
-    float:right;
-    margin-right: 10px;
-    width: 450px;
+    margin-left: 20px;
     height:inherit;
-    display:inline-block;    
-    background-color:#EBEBEB;
-}
-
-.p-text {
-    padding-top: 5px;
-    padding-left: 10px;
-    margin:auto;
-    display:inline-block;
+    max-width: 470px;
 }
 
 .myMessage {
     margin-top: 10px;
     margin-left: 20px;
-    width: 450px;
+    width: 580px;
     height: 50px;
     display:inline-block;
 }
 
 .textArea {
-    width: inherit;
+    width: 420px;
     height: inherit;
     resize: none;
     border:inset;
@@ -134,56 +103,30 @@ h4 {
     background-color:#EBEBEB;
 }
 
-button.sendButton { 
+.btn-send {
     display:inline-block;
-    height:auto;
-    margin:auto;
-    float:right;
-    margin-right: 15px;
-    margin-top: 15px;
-    border-radius: 10px;
-}
-img.sendImg {
-    height: 35px;
-    width: 55px;
+    margin-bottom: 40px;
+    margin-left: 20px;
 }
 
-.friend-box {
-    background-image: url(http://subtlepatterns.com/patterns/old_moon.png);
-    width: 210px;
-    height: 410px;
-    margin-top: 10px;
-    float:right;
-    border-radius: 10px;
-    display:inline-block;
-    box-shadow: 0 10px 15px rgba(2, 2, 2, 0.5),inset 0px 30px 30px rgba(18, 18, 18, 0.4);      
-
-    border:groove;
+.del-button{
+    margin-right: 10px;
+    float: right;
+    color:grey;
 }
 
-.friend {
-    border: inset;
-    height: 60px;
-    border-radius: 10px;
+.change-message-button {
+    margin-right: 10px;
+    float: right;
+    color: grey;
 }
-.friendImg {
-    float:left;
-    display:inline-block;
-    width: 50px;
-    height: 50px;
+
+.temp-area { 
+    width: 470px;
+    border: 0px;
     margin-left: 10px;
-    margin-top: 5px;
-}
-h2 {
-    
-    display:inline-block;
-    margin: auto;
-    padding-left: 25px;
-    padding-top: 12px;
-}
-h5 {
-    padding-left:25px;
-    display: inline-block;
-    font-size:x-small;
-    margin: auto;
+    height:inherit;
+    max-width: 470px;
+    display: inline-block;    
+    background-color:#EBEBEB;
 }
