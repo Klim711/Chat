@@ -32,6 +32,7 @@ body{
 }
 
 .edit-name {
+    outline: none;
     font-size: small;
     max-width: 80px;
     height:28px;
@@ -83,7 +84,8 @@ body{
 .text-message {
     margin-left: 20px;
     height:inherit;
-    max-width: 470px;
+    max-width: 460px;
+    word-wrap: break-word;
 }
 
 .myMessage {
@@ -95,6 +97,7 @@ body{
 }
 
 .textArea {
+    outline: none;
     width: 420px;
     height: inherit;
     resize: none;

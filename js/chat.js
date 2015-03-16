@@ -1,10 +1,30 @@
-var changeFlag = false;
+var generateId = function () {
+	var date = Date.now();
+	var random = Math.random() * Math.random();
+
+	return Math.floor(date * random).toString();
+};
+
+var theMessage = function (text1, text2) {
+    return {
+        name: text1,
+        textOfMessage: text2,
+        id: generateId()        
+    };
+};
+
+var allMessages = [];
+
 function run() {    
     var appContainer = document.getElementsByClassName("body")[0];
     appContainer.addEventListener("keydown", keyPress);
     appContainer.addEventListener("keyup", delEnter);
+    
     var messages = document.getElementsByClassName("messages")[0];
     messages.addEventListener("click", messageEvent);
+    
+    var resMessages = restoreMessages();    
+    createAllMessages(resMessages);
 }
 
 function keyPress(e) {
@@ -23,6 +43,9 @@ function delEnter(e) {
         }
     }
 }
+
+var changeFlag = false;
+
 function messageEvent(e) {
     var element = e.target;
     if(element.classList.contains("del-button") ) {
@@ -84,29 +107,35 @@ function onClickChange() {
 
 function onClickSendMessage() {
     var message = document.getElementsByClassName("textArea")[0];
-    addMessage(message.value);
+    var name = document.getElementById("userName");
+    var theMes = theMessage(name.innerHTML, message.value);
+    addMessage(theMes);
+    
     message.value = "";
     var messages = document.getElementsByClassName("messages")[0];
     messages.scrollTop = messages.scrollHeight;
+    
 }
 
-function addMessage(text) {
-    if (!text) {
+function addMessage(theMes) {
+    if (!theMes.textOfMessage) {
         return;
     }
-    var message = createMessage(text);
+    var message = createMessage(theMes);
+    message.id = theMes.id;
     var messages = document.getElementsByClassName("messages")[0];
     messages.appendChild(message);
+    allMessages.push(theMes);
+    storeMessages();
 }
 
-function createMessage(text) {
+function createMessage(theMes) {
 	var oneMessage = document.createElement("div"); 
 	oneMessage.classList.add("oneMessage");
     
     var userName = document.createElement("div");
     userName.classList.add("user-name");
-    var name = document.getElementById("userName").innerText;
-    userName.innerHTML = name;
+    userName.innerHTML = theMes.name;
     oneMessage.appendChild(userName);
         
     var delSpan = document.createElement("span");
@@ -123,8 +152,36 @@ function createMessage(text) {
     
     var textMessage = document.createElement("div");
 	textMessage.classList.add("text-message"); 
-	textMessage.innerHTML = text; 
+	textMessage.innerHTML = theMes.textOfMessage; 
     oneMessage.appendChild(textMessage);
     
     return oneMessage;
+}
+
+function storeMessages() {
+    if(typeof(Storage) == "undefined") {
+		alert('localStorage is not accessible');
+		return;
+	}
+    
+    localStorage.setItem("Chat messages", JSON.stringify(allMessages));
+}
+
+function restoreMessages() {
+    if(typeof(Storage) == "undefined") {
+		alert('localStorage is not accessible');
+		return;
+	}
+    
+    var item = localStorage.getItem("Chat messages");
+    return item && JSON.parse(item);
+}
+
+function createAllMessages (messages){
+    if(messages != null) {
+        
+        for(var i = 0; i < messages.length; i++) {
+            addMessage(messages[i]);   
+        }
+    }
 }
