@@ -9,7 +9,8 @@ var theMessage = function (text1, text2) {
     return {
         name: text1,
         textOfMessage: text2,
-        id: generateId()        
+        id: generateId(),
+        master: false
     };
 };
 
@@ -48,20 +49,27 @@ var changeFlag = false;
 
 function messageEvent(e) {
     var element = e.target;
-    if(element.classList.contains("del-button") ) {
-        deleteMessage(element.parentElement);    
-    }
-    if(element.classList.contains("change-message-button")) {
-        if(!changeFlag)
-            beginChangeMessage(element.parentElement);  
-        else endChangeMessage(e);
-        
+    if(element.parentElement.master == true) {
+        if(element.classList.contains("del-button") ) {
+            deleteMessage(element.parentElement);    
+        }
+        if(element.classList.contains("change-message-button")) {
+            if(!changeFlag)
+                beginChangeMessage(element.parentElement);  
+            else endChangeMessage(e);        
+            }
     }
 }
 
 function deleteMessage(oneMessage) {
     oneMessage.parentElement.removeChild(oneMessage);
-    oneMessage.remove();    
+    oneMessage.remove();
+    for(var i = 0; i < allMessages.length; ++i) {
+        if(oneMessage.id == allMessages[i].id) {
+            allMessages.splice(i, 1);
+            storeMessages();
+        }
+    }
 }
 
 function beginChangeMessage(oneMessage) {
@@ -82,6 +90,13 @@ function endChangeMessage(e) {
     parentDiv.removeChild(area);
     parentDiv.innerHTML = text;
     changeFlag = false;
+    parentDiv = parentDiv.parentElement;
+    for(var i = 0; i < allMessages.length; ++i) {
+        if(parentDiv.id == allMessages[i].id) {
+            allMessages[i].textOfMessage = text;
+            storeMessages();
+        }
+    }
 }
 
 function enterPress(e) {
@@ -109,6 +124,7 @@ function onClickSendMessage() {
     var message = document.getElementsByClassName("textArea")[0];
     var name = document.getElementById("userName");
     var theMes = theMessage(name.innerHTML, message.value);
+    theMes.master = true;
     addMessage(theMes);
     
     message.value = "";
@@ -123,6 +139,7 @@ function addMessage(theMes) {
     }
     var message = createMessage(theMes);
     message.id = theMes.id;
+    message.master = theMes.master;
     var messages = document.getElementsByClassName("messages")[0];
     messages.appendChild(message);
     allMessages.push(theMes);
@@ -137,19 +154,20 @@ function createMessage(theMes) {
     userName.classList.add("user-name");
     userName.innerHTML = theMes.name;
     oneMessage.appendChild(userName);
-        
-    var delSpan = document.createElement("span");
-    delSpan.classList.add("glyphicon");
-    delSpan.classList.add("glyphicon-remove");    
-    delSpan.classList.add("del-button");
-    oneMessage.appendChild(delSpan);
     
-    var changeSpan = document.createElement("span");
-    changeSpan.classList.add("glyphicon");
-    changeSpan.classList.add("glyphicon-pencil");    
-    changeSpan.classList.add("change-message-button");
-    oneMessage.appendChild(changeSpan);
+    if(theMes.master) {
+        var delSpan = document.createElement("span");
+        delSpan.classList.add("glyphicon");
+        delSpan.classList.add("glyphicon-remove");    
+        delSpan.classList.add("del-button");
+        oneMessage.appendChild(delSpan);
     
+        var changeSpan = document.createElement("span");
+        changeSpan.classList.add("glyphicon");
+        changeSpan.classList.add("glyphicon-pencil");    
+        changeSpan.classList.add("change-message-button");
+        oneMessage.appendChild(changeSpan);
+    }
     var textMessage = document.createElement("div");
 	textMessage.classList.add("text-message"); 
 	textMessage.innerHTML = theMes.textOfMessage; 
@@ -178,9 +196,11 @@ function restoreMessages() {
 }
 
 function createAllMessages (messages){
-    if(messages != null) {
-        
+    if(messages != null) {        
         for(var i = 0; i < messages.length; i++) {
+            if(messages[i].master == true) {
+                document.getElementById("userName").innerHTML = messages[i].name;
+            }
             addMessage(messages[i]);   
         }
     }

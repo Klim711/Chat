@@ -18,6 +18,9 @@ body{
     box-shadow: 0 10px 15px rgba(2, 2, 2, 0.5),inset 0px 30px 30px rgba(18, 18, 18, 0.4);      
     text-align: center;
     border:groove;
+    font-family:'Comic Sans MS';
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    font-size: 36px;
 }
 
 .profile-box {
@@ -50,7 +53,7 @@ body{
 .chat-box {
     background-image: url(http://subtlepatterns.com/patterns/old_moon.png);
     width: 800px;
-    height: 410px;
+    height: 510px;
     margin-top: 10px;
     border-radius: 10px;
     display:inline-block;
@@ -60,8 +63,8 @@ body{
 
 .messages {
     background-color: white;
-    width: 530px;
-    height: 300px;
+    width: 540px;
+    height: 400px;
     margin-left: 20px;
     margin-top: 20px;   
     border:inset;
@@ -98,7 +101,7 @@ body{
 
 .textArea {
     outline: none;
-    width: 420px;
+    width: 430px;
     height: inherit;
     resize: none;
     border:inset;
